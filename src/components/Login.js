@@ -16,7 +16,8 @@ const Login = () => {
                 navigate('/Enable2FA', { userId: response.data.userId });
             } else {
                 // Handle successful login
-                navigate('/Profile', { userId: response.data.userId });
+                localStorage.setItem('token', response.data.token);
+                navigate('/Enable2FA', { userId: response.data.userId });
             }
         } catch (error) {
             console.log(error);
