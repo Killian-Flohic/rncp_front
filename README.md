@@ -1,1 +1,5 @@
-# rncp_front
+# rncp front
+
+npm i 
+
+npm start
