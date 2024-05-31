@@ -19,8 +19,10 @@ const Enable2FA = () => {
     };
 
     const handleVerify2FA = async () => {
+        console.log(localStorage.getItem('token'));
         try {
             const response = await axios.post('http://localhost:3001/Verify2FA', { token }, {
+
                 headers: { 'x-access-token': localStorage.getItem('token') }
             });
             alert(response.data);
@@ -42,7 +44,7 @@ const Enable2FA = () => {
                         value={token}
                         onChange={(e) => setToken(e.target.value)}
                     />
-                    <button onClick={handleVerify2FA}>Verify 2FA</button>
+                    <button onClick={handleVerify2FA}>Verifier 2FA</button>
                 </div>
             )}
         </div>
